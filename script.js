@@ -15,3 +15,24 @@ function updateTime() {
 
 updateTime();
 setInterval(updateTime, 1000);
+
+
+const convertButton = document.getElementById("convert-btn");
+const input = document.getElementById("number");
+const output = document.getElementById("output");
+
+let inputNumber;
+convertButton.addEventListener("click", () =>  {
+        inputNumber = parseInt(input.value);
+        console.log(inputNumber);
+        let 
+    }
+);
+
+function convertToRoman(num) {
+
+}
+
+function outputDisplay(romanNumeral){
+    output.innerText = romanNumeral;
+}
