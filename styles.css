@@ -2,17 +2,16 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    overflow: clip;
-
+    /* border: 1px solid; */
+    /* overflow: clip; */
 }
 
 body {
     height: 100vh;
     width: 100vw;
-    display: flex;
+    display: grid;
     align-content: center;
     font-family: 'Times New Roman', Times, serif;
-    font-stretch: ultra-condensed;
     overflow: clip;
 }
 
@@ -22,7 +21,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow:visible;
+    overflow: visible;
+    opacity: 70%;
 }
 
 .clock-face-container {
@@ -163,8 +163,87 @@ body {
     border-top-right-radius: 50px;
 }
 
+#number-converter-container {
+    position: absolute;
+    width: 500px;
+    height: 400px;
+    align-self: center;
+    justify-self: center;
+    border: 4px solid black;
+    border-radius: 20px;
+    /* opacity: 80%; */
+    background-color: hsla(0, 0%, 100%, 80%);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr 0.5fr 1fr;
+    font-family: Garamond;
+
+}
+
+h1 {
+    grid-area: 1 / 1 / 2 / 4;
+    text-align: center;
+    font-size: 4rem;
+    font-weight: 800;
+}
+
+#number {
+    font-family: Garamond;
+    grid-area: 2 / 1 / 3 / 3;
+    font-size: 3rem;
+    text-align: center;
+    background-color: hsla(0, 0%, 100%, 80%);
+}
+
+#convert-btn {
+    font-family: Garamond;
+    font-size: 2.5rem;
+    font-weight: 800;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border: 7px outset;
+    color: hsl(0, 0%, 20%);
+    
+
+}
+
+#convert-btn:hover {
+    background-color: hsl(0, 0%, 90%);    
+}
+
+#convert-btn:active {
+    background-color: hsl(0, 0%, 95%);    
+    border: 3px inset;
+}
+
+#output {
+    grid-area: 3 / 1 / 4 / 4;
+    width: 80%;
+    height: fit-content;
+    max-height: 130px;
+    align-self: center;
+    justify-self: center;
+    text-align: center;
+    font-size: 3.5rem;
+    /* text-wrap: balance; */
+    overflow-wrap: break-word;
+    overflow: clip;
+}
+
 @media only screen and (max-width: 1200px) {
     .clock {
+        scale: 0.9;
+    }
+    #number-converter-container {
+        scale: 0.9;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .clock {
+        scale: 0.7;
+    }
+    #number-converter-container {
         scale: 0.7;
     }
 }

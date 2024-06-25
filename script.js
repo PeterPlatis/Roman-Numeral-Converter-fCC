@@ -8,7 +8,7 @@ function updateTime() {
     const currentMinute = now.getMinutes();
     const currentSecond = now.getSeconds();
 
-    hoursHand.style.transform = `rotate(calc(90deg + ${currentHour * 30}deg))`;
+    hoursHand.style.transform = `rotate(calc(90deg + ${(currentHour * 30) + (currentMinute / 2)}deg))`;
     minutesHand.style.transform = `rotate(calc(90deg + ${currentMinute * 6}deg))`;
     secondsHand.style.transform = `rotate(calc(90deg + ${currentSecond * 6}deg))`;
 }
