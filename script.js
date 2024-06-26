@@ -43,7 +43,9 @@ convertButton.addEventListener("click", () =>  {
             inputElement.style.backgroundColor = "hsla(0, 93%, 83%, 0.8)";
             outputElement.style.fontSize = "2.5rem";
 
-            if (inputNumber <= 0) {
+            if(isNaN(inputNumber)) {
+                outputElement.innerText = "Please enter a valid number.";
+            } else if (inputNumber <= 0) {
                 outputElement.innerText = "Please enter a number greater than or equal to 1.";
             } else {
                 outputElement.innerText = "Please enter a number less than or equal to 3999.";
